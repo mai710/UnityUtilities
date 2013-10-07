@@ -19,8 +19,6 @@ public class SplitTimelinePostprocessor : AssetPostprocessor {
 		ModelImporter modelImporter = assetImporter as ModelImporter;
 
 		//Some personal settings I always make
-		modelImporter.globalScale = 0.1f;
-		modelImporter.animationType = ModelImporterAnimationType.Legacy;
 		modelImporter.bakeIK = true;
 		modelImporter.importMaterials = true;
 
