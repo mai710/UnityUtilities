@@ -30,7 +30,7 @@ public class SplitTimelinePostprocessor : AssetPostprocessor {
 		string filePath = Path.GetDirectoryName(assetPath) + "/Timelines/" + Path.GetFileNameWithoutExtension(assetPath);
 		ClipXMLParser parser = new ClipXMLParser(filePath + ".xml");
 
-		//Get the list od clips we pulled from the xml data
+		//Get the list of clips we pulled from the xml data
 		XmlNodeList clipNodes = parser.GetClips();
 		ModelImporterClipAnimation[] clips = new ModelImporterClipAnimation[clipNodes.Count];
 

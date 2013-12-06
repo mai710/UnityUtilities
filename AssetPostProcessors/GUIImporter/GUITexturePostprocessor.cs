@@ -18,7 +18,7 @@ public class GUITexturePostprocessor : AssetPostprocessor {
 
 		DirectoryInfo path = new DirectoryInfo(assetPath);
 		Debug.Log(path.Parent.Name);
-		if(path.Parent.Name == "Atlases_Slices")
+		if(path.Parent.Name == "Atlas_Slices")
 		{
 			textureImporter.textureType = TextureImporterType.GUI;
 			textureImporter.textureFormat = TextureImporterFormat.AutomaticTruecolor;
