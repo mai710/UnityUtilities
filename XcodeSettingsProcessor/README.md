@@ -16,7 +16,7 @@ The file we’re after is project.pbxproj. This file is not in plain view,  but 
 
 The first thing to do is, in Xcode, go to your Build Settings tab. Then from the Xcode menu, toggle Editor > Show Settings Names. You’ll notice the build settings are now displayed in a slightly different format. This is the format they are actually saved as and are referenced by in config files. My setting name now shows as DEBUG_INFORMATION_FORMAT. Next, toggle Editor > Show Definitions. This will do the same for the values of each setting.
 
-Now here’s what I wanted to achieve: 
+Now here’s what I wanted to achieve:
 - for a Debug build, set DEBUG_INFORMATION_FORMAT = dwarf
 - for a Release build, set DEBUG_INFORMATION_FORMAT = dwarf-with-dsym
 
