@@ -15,14 +15,12 @@ def process_pbxproj(xcodeproj_filename):
 	pbxproj_filename = xcodeproj_filename + '/project.pbxproj'
 	pbxproj = open(pbxproj_filename, 'r')
 	lines = pbxproj.readlines()
-	print(len(lines))
 	pbxproj.close()
 
 
 	# Next open up an empty project.pbxproj for writing and iterate over the old
 	# file copying the original file and inserting anything extra we need
 	pbxproj = open(pbxproj_filename, 'w')
-	section = ''
 	subsection = ''
 	stage = 0
 
@@ -36,29 +34,22 @@ def process_pbxproj(xcodeproj_filename):
 			pbxproj.write(line)
 
 			# Each section starts with a comment such as
-			# /* Begin PBXBuildFile section */'
+			# /* Begin Section_Name section */'
 			if stage == 0:
-				if line[3:8] == 'Begin':
-					if line.split(' ')[2] == 'XCBuildConfiguration':
-						print('found the section we want')
-						stage = 1
+				if line.find('/* Begin XCBuildConfiguration section */') >= 0:
+					stage = 1
 
 			#inside the 'XCBuildConfiguration' section    
 			elif stage == 1:
-				#if len(line.split(' ')) > 2 and line.split(' ')[2] == 'Debug':
 				if line.find('/* Debug */ = {') >= 0:
-					print('Debug')
 					subsection = 'Debug'
 					stage = 2
-				#elif len(line.split(' ')) > 2 and line.split(' ')[2] == 'Release':
 				elif line.find('/* Release */ = {') >= 0: 
-					print('Release')
 					subsection = 'Release'
 					stage = 2
 
 			elif stage == 2:
 				if line.find('buildSettings = {') >= 0:
-					print('build settings')
 					if subsection == 'Debug':
 						print('set debug format')
 						#we want to set this option to dwarf for debug
@@ -72,7 +63,6 @@ def process_pbxproj(xcodeproj_filename):
 			
 
 	pbxproj.close()
-	print('closing file')
 
 
 
