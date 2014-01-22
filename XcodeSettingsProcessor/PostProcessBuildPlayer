@@ -2,6 +2,8 @@
 
 import sys
 
+#This script is based on the PostProcessBuildPlayer provided by Qualcomm's Vuforia plugin
+
 # Processes the given xcode project to add or change the supplied parameters
 #   xcodeproj_filename - filename of the Xcode project to change
 #   frameworks - list of Apple standard frameworks to add to the project
