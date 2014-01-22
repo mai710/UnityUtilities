@@ -24,17 +24,15 @@ If you’ve a regular Unity user, you’ve probably noticed the amount of time g
 
 As this was my first time inspecting the project.pbxproj file, I wasn’t exactly sure where to look. I started by searching for the name of my settings, but no results were found. So I searched for Build Settings and got a few hits. I found a few occurrences under the XCBuildConfiguration section. If you go to this section, you will see blocks of code like this:
 
-1D6058940D05DD3E006BFB54 /* Debug */ = {
-	1D6058940D05DD3E006BFB54 /* Debug */ = { 
-		isa = XCBuildConfiguration; 
-	 	buildSettings = { 
-		ALWAYS_SEARCH_USER_PATHS = NO; 
-		ARCHS = armv7;
-
-		….
-
+	1D6058940D05DD3E006BFB54 /* Debug */ = {
+		isa = XCBuildConfiguration;
+		buildSettings = {
+			ALWAYS_SEARCH_USER_PATHS = NO;
+			ARCHS = armv7;
+			…
+		};
 	};
-};
+
 
 And similar block for /* Release */.
 
